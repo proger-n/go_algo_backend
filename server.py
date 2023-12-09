@@ -98,5 +98,7 @@ def select(inp: InputData):
         "money": money,
         "date_cost": parse_csv(df_week),
         "buy" : parse_csv(df_buy),
-        "sell" : parse_csv(df_sell)
+        "sell" : parse_csv(df_sell),
+        "percent" : (money/inp.money_input - 1) * 100,
+        "date_exit" : parse_csv(df_sell.tail(1).Date)
     }
