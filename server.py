@@ -45,7 +45,7 @@ def action(df, company, input_money):
     df_result = pd.DataFrame()
     for comp in company:
         df_result = df_result.append(df[(df.Stock == comp) & (
-            df.signal_rol == 1)].head(1), ignore_index=True)
+            df.signal_rol == 1) & (pd.to_datetime(df.Date) > datetime.now())].head(1), ignore_index=True)
     # df_result["Date"] = df_result["Date"].dt.strftime("%Y-%m-%d %H:%M:%S")
     # df_coef = df.groupby(["Stock"], as_index=False).agg({"Predicted_Close": "first"}) # Заменить на коэф для компании
     for comp in company:
