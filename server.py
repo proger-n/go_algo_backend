@@ -31,10 +31,6 @@ class InputData(BaseModel):
 df = pd.read_csv(
     "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=10BQGAmRvfrHTSjyvyFNYemsn8FseTNSF")
 
-# df = df[["Date", "Predicted_Close"]]
-cost_now = min(df["Predicted_Close"])
-cost_max = max(df["Predicted_Close"])
-
 
 def week(df, company):
     df["Date"] = pd.to_datetime(df["Date"])
@@ -100,7 +96,7 @@ def select(inp: InputData):
     df_buy, df_sell, money = action(df, inp.company_input, money)
     return {
         "money": money,
-        "date-cost": parse_csv(df_week),
+        "date_cost": parse_csv(df_week),
         "buy" : parse_csv(df_buy),
         "sell" : parse_csv(df_sell)
     }
