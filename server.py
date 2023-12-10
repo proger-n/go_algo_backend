@@ -29,7 +29,7 @@ class InputData(BaseModel):
 # df = pd.read_csv(
 #     "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1koIRbvB8ChIoxupO2dsEnA52Z9p121YU")
 df = pd.read_csv(
-    "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=10BQGAmRvfrHTSjyvyFNYemsn8FseTNSF")
+    "https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1nMF079IAXzdHDtndTwJj5y2Fia3L_QOw")
 
 
 def week(df, company):
